@@ -23,6 +23,14 @@
 		<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 		<link rel="shortcut icon" href="../assets/ico/favicon.png">
 		<script type="text/javascript">
+			$(document).ready(function() {
+				var valueParam = window.location.search.substring(1);
+				if (valueParam == 'goToNews')
+					scrollNews();
+				else if (valueParam == 'goToInitiative')
+					scrollChiSiamo();
+			});
+
 			function scrollStoria() {
 				$('html, body').animate({
 					scrollTop : $('#heroStoria').offset().top
@@ -86,13 +94,13 @@
 									<a href="#"><i class="icon-home icon-white"></i>Home</a>
 								</li>
 								<li>
-									<a href="#" onclick="scrollChiSiamo();">Iniziative</a>
-								</li>
-								<li>
 									<a href="#" onclick="scrollNews();">News</a>
 								</li>
 								<li>
-									<a href="#" onclick="scrollStoria();">La Storia</a>
+									<a href="#" onclick="scrollChiSiamo();">Iniziative</a>
+								</li>
+								<li>
+									<a href="storia.html">La Storia</a>
 								</li>
 								<li>
 									<a href="#" onclick="scrollContatti();">Contati</a>
@@ -136,17 +144,19 @@
 						</div>
 					</div>
 				</div>
+				<!--
 				<div class="item">
-					<img src="img/fiorentina_03.jpg">
-					<div class="container">
-						<div class="carousel-caption">
-							<h1>Un segno nella Storia.</h1>
-							<p class="lead">
-								Ogni ricordo un emozione, ogni emozione un ricordo
-							</p>
-						</div>
-					</div>
+				<img src="img/fiorentina_03.jpg">
+				<div class="container">
+				<div class="carousel-caption">
+				<h1>Un segno nella Storia.</h1>
+				<p class="lead">
+				Ogni ricordo un emozione, ogni emozione un ricordo
+				</p>
 				</div>
+				</div>
+				</div>
+				-->
 			</div>
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 			<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
@@ -155,51 +165,36 @@
 		================================================== -->
 		<div id='main' role='main'>
 			<div class='container-fluid' id="containerBootstrap">
+				<div class="row-fluid">
+					<div class="span2">
+						<!--Sidebar content-->
+					</div>
+					<div class="span10">
+						<div class="hero-unit" id="heroNews">
+							<div id="pagNews" class="row-fluid">
+								<div class="span12">
+									LE NEWS
+								</div>
+							</div>
+						</div>
+						<div class="hero-unit" id="heroChiSiamo">
+							<div id="pagChiSiamo" class="row-fluid">
+								<div class="span12">
+									INIZIATIVE
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class='content'>
-					<div class="hero-unit" id="heroStoria">
-						<div id="pagstoria" class="row-fluid">
-							<div class="span12">
-								LA STORIA
-							</div>
-							<div class="span12" style="font-family: Helvetica; font-size: small;">
-								Il Viola Club “Mario Fantechi” , dedicato al capo tifoso che si arrampicò sulla torre di Arnolfo per issarvi il mitico labaro viola in occasione della vittoria dello scudetto, nasce nel Maggio 1975 e presenta subito tra i fondatori un personaggio importante per la tifoseria viola: MARIO CIUFFI. Conduce il club con risultanti importanti fino quasi ad arrivare a circa 300 soci.
-								<br>
-								<br/>
-								Dal Bar Marisa, che per parecchi anni è stata la sede del viola club, ritrovo ormai storico di tifosi e simpatizzanti, partivano in quegli anni, seconda metà anni 70/inizio anni 80, anche due o tre pullman pieni di tifosi.
-								<br>
-								<br>
-								A succedere a Mario Ciuffi fu colui che ancora oggi è il presidente del CENTRO COORDINAMENTO VIOLA CLUB, FILIPPO PUCCI. Riuscì a portare avanti l’opera del predecessore e a farsi notare all’ interno dell’associazione che riunisce i viola club italiani e del mondo tanto da essere eletto alla testa dell’ACCVC nel 1997 e confermato per i mandati successivi.
-								<br>
-								<br>
-								Difficili per il Club, ma abbiamo comunque fatto la nostra parte, sono stati gli anni che sono culminati con il fallimento della nostra squadra. La Serie C2 e il ritorno in Seria A.
-								<br>
-								<br>
-								Dopo Filippo Pucci presidente del club fu GIANFRANCO SIDELI, durante il suo mandato vengono ricordate le cene rese famose dai tanti ospiti illustri che si sono succedute negli anni e i locali dove le stesse si svolgevano.
-
-							</div>
-						</div>
-					</div>
-					<div class="hero-unit" id="heroNews">
-						<div id="pagNews" class="row-fluid">
-							<div class="span12">
-								LE NEWS
-							</div>
-						</div>
-					</div>
-					<div class="hero-unit" id="heroChiSiamo">
-						<div id="pagChiSiamo" class="row-fluid">
-							<div class="span12">
-								INIZIATIVE
-							</div>
-						</div>
-					</div>
-
 					<div class="hero-unit" id="heroUnitFooter">
 						<div id="" class="row-fluid">
 							<div id="blueCanvas" class="span6 offset3">
 								Aggiungiti al nostro Viola Club, contattaci per ogni informazione sulla
-								Fiorentina<br>
-								Informati su come associarti.<br>
+								Fiorentina
+								<br>
+								Informati su come associarti.
+								<br>
 								<br>
 								<br>
 								<table style="padding: 10px;">
@@ -219,10 +214,6 @@
 										<td> Paolo </td>
 										<td style="padding-left: 20px;"> +39 329 4138442 </td>
 									</tr>
-									<tr>
-										<td> Daniele </td>
-										<td style="padding-left: 20px;"> +39 329 4138442 </td>
-									</tr>
 								</table>
 								<div style="padding-top: 30px;">
 									Viale Manfredo Fanti n&deg 14 - 50132 - Firenze
@@ -234,7 +225,7 @@
 						<p class="pull-right">
 							<a href="#">Back to top</a>
 						</p>
-						<p>
+						<p style="color: white;">
 							&copy; Develop by Alessio Casini - Francesco Paroli</a>
 						</p>
 					</footer>

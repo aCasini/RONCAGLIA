@@ -14,6 +14,7 @@
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 		<link href="css/header.css" rel="stylesheet" media="screen">
+		<link href="css/footer.css" rel="stylesheet" media="screen">
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 		<script src="../assets/js/html5shiv.js"></script>
@@ -21,6 +22,37 @@
 		<!-- Fav and touch icons -->
 		<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 		<link rel="shortcut icon" href="../assets/ico/favicon.png">
+		<script type="text/javascript">
+			$(document).ready(function() {
+			  //scrollStoria();
+			});
+		
+			function scrollStoria() {
+				$('html, body').animate({
+					scrollTop : $('#heroStoria').offset().top
+				}, 1500);
+				isOnTop = false;
+			}
+
+			function scrollContatti() {
+				$('html, body').animate({
+					scrollTop : $('#heroUnitFooter').offset().top
+				}, 1500);
+				isOnTop = false;
+			}
+
+			function goOnTop() {
+				if (navigator.userAgent.match(/AppleWebKit/) && !navigator.userAgent.match(/Chrome/)) {
+					//$(".centerItem").css('margin-top', '34%');
+					//$(".itemCircle").css('margin-top', '36%');
+					//$(".itemCircle").css('margin-left', '44%');
+				}
+				$('html, body').animate({
+					scrollTop : -3500
+				}, 1500);
+				isOnTop = true;
+			}
+		</script>
 	</head>
 	<body>
 		<!-- NAVBAR
@@ -36,24 +68,24 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="brand" href="#">Viola Club</a>
+						<a class="brand" href="#"><img src="" /> Viola Club</a>
 						<!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
 						<div class="nav-collapse collapse">
 							<ul class="nav">
-								<li>
-									<a href="#"><i class="icon-home icon-white"></i>Home</a>
+								<li class="active">
+									<a href="index.html"><i class="icon-home icon-white"></i>Home</a>
 								</li>
 								<li>
-									<a href="chiSiamo.html">Chi Siamo</a>
+									<a href="index.html?goToNews">News</a>
 								</li>
 								<li>
-									<a href="news.html">News</a>
-								</li>
-								<li class="active"> 
-									<a href="storia.html">La Storia</a>
+									<a href="index.html?goToInitiative" onclick="scrollChiSiamo();">Iniziative</a>
 								</li>
 								<li>
-									<a href="info.html">Contati</a>
+									<a href="#" onclick="scrollStoria();">La Storia</a>
+								</li>
+								<li>
+									<a href="#" onclick="scrollContatti();">Contati</a>
 								</li>
 								<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
 							</ul>
@@ -65,39 +97,46 @@
 		</div><!-- /.navbar-wrapper -->
 		<!-- Carousel
 		================================================== -->
+		<div class="row-fluid" style="position: fixed;">
+			<div class="span1 offset11" style="padding: 2px;">
+				<a href="#" onclick="goOnTop();" style="" id="goTop"> <!--<img title="Go on Top" alt="Go On Top" src="img/Icone/goTop_hwt.png">--> <i class="icon-eject"></i> </a>
+			</div>
+		</div>
 		<div id="myCarousel" class="carousel slide">
 			<div class="carousel-inner">
+				<!--
 				<div class="item active">
 					<img src="img/Firenze_04.jpg">
 					<div class="container">
 						<div class="carousel-caption">
 							<h1>La nostra Passione</h1>
 							<p class="lead">
-								Ti cresce dentro sin da piccolo, ti accompagna per tutta la vita, la Fiorentina.
+								La nostra citt&agrave;, la nostra gioia pi&ugrave; grande
 							</p>
 						</div>
 					</div>
 				</div>
 				<div class="item">
-					<img src="img/fiorentina_02.jpg">
+					<img src="img/champions_01.jpg">
 					<div class="container">
 						<div class="carousel-caption">
 							<h1>Inseguire un Sogno.</h1>
 							<p class="lead">
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								Non lasciarlo andare via, crederci sempre finch&egrave; non sar&agrave; diventato vero
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="item">
+				-->
+				<div class="item active">
 					<img src="img/fiorentina_03.jpg">
 					<div class="container">
 						<div class="carousel-caption">
 							<h1>Un segno nella Storia.</h1>
 							<p class="lead">
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								Ogni ricordo un emozione, ogni emozione un ricordo
 							</p>
-							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -106,15 +145,77 @@
 		</div><!-- /.carousel -->
 		<!-- Marketing messaging and featurettes
 		================================================== -->
-		<footer>
-				<p class="pull-right">
-					<a href="#">Back to top</a>
-				</p>
-				<p>
-					&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-				</p>
-			</footer>
-			<script>
+		<div id='main' role='main'>
+			<div class='container-fluid' id="containerBootstrap">
+				<div class='content'>
+					<div class="hero-unit" id="heroStoria">
+						<div id="pagstoria" class="row-fluid">
+							<div class="span12">
+								LA STORIA
+							</div>
+							<div class="span12" style="font-family: Helvetica; font-size: small;">
+								Il Viola Club “Mario Fantechi” , dedicato al capo tifoso che si arrampicò sulla torre di Arnolfo per issarvi il mitico labaro viola in occasione della vittoria dello scudetto, nasce nel Maggio 1975 e presenta subito tra i fondatori un personaggio importante per la tifoseria viola: MARIO CIUFFI. Conduce il club con risultanti importanti fino quasi ad arrivare a circa 300 soci.
+								<br>
+								<br/>
+								Dal Bar Marisa, che per parecchi anni è stata la sede del viola club, ritrovo ormai storico di tifosi e simpatizzanti, partivano in quegli anni, seconda metà anni 70/inizio anni 80, anche due o tre pullman pieni di tifosi.
+								<br>
+								<br>
+								A succedere a Mario Ciuffi fu colui che ancora oggi è il presidente del CENTRO COORDINAMENTO VIOLA CLUB, FILIPPO PUCCI. Riuscì a portare avanti l’opera del predecessore e a farsi notare all’ interno dell’associazione che riunisce i viola club italiani e del mondo tanto da essere eletto alla testa dell’ACCVC nel 1997 e confermato per i mandati successivi.
+								<br>
+								<br>
+								Difficili per il Club, ma abbiamo comunque fatto la nostra parte, sono stati gli anni che sono culminati con il fallimento della nostra squadra. La Serie C2 e il ritorno in Seria A.
+								<br>
+								<br>
+								Dopo Filippo Pucci presidente del club fu GIANFRANCO SIDELI, durante il suo mandato vengono ricordate le cene rese famose dai tanti ospiti illustri che si sono succedute negli anni e i locali dove le stesse si svolgevano.
+
+							</div>
+						</div>
+					</div>
+					<div class="hero-unit" id="heroUnitFooter">
+						<div id="" class="row-fluid">
+							<div id="blueCanvas" class="span6 offset3">
+								Aggiungiti al nostro Viola Club, contattaci per ogni informazione sulla
+								Fiorentina<br>
+								Informati su come associarti.<br>
+								<br>
+								<br>
+								<table style="padding: 10px;">
+									<tr>
+										<td> Antonio </td>
+										<td style="padding-left: 20px;"> +39 335 7364776 </td>
+									</tr>
+									<tr>
+										<td> Maurizio </td>
+										<td style="padding-left: 20px;"> +39 338 1609189 </td>
+									</tr>
+									<tr>
+										<td> Valentina </td>
+										<td style="padding-left: 20px;"> +39 389 8394628 </td>
+									</tr>
+									<tr>
+										<td> Paolo </td>
+										<td style="padding-left: 20px;"> +39 329 4138442 </td>
+									</tr>
+								</table>
+								<div style="padding-top: 30px;">
+									Viale Manfredo Fanti n&deg 14 - 50132 - Firenze
+								</div>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<p class="pull-right">
+							<a href="#">Back to top</a>
+						</p>
+						<p style="color: white;">
+							&copy; Develop by Alessio Casini - Francesco Paroli</a>
+						</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<script>
 			! function($) {
 				$(function() {
 					// carousel demo
