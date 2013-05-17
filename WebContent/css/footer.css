@@ -15,16 +15,52 @@
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #2F2727, #5C1D92);
 	padding: 15px;
-	background-size: 100%; 100%;
+	/*background-size: 100%; 100%;*/
 	font-family: helvetica;
 	font-weight:200;
-	font-size: medium;
+	font-size: small;
 	color: white;
 	line-height: 20px;
     margin-bottom:10px;
+    z-index: 3;
 }
 
 #heroUnitFooter {
+	/*
   background-image: url('../img/Map_01.jpg');
   background-repeat: no-repeat;
+  */
+}
+
+#heroUnitFooterC {
+	/*
+  background-image: url('../img/Map_01.jpg');
+  background-repeat: no-repeat;
+  */
+ margin-bottom: 0px;
+ margin-left: 0px;
+ margin-right: 0px;
+ margin-top: 0px;
+ padding: 2px;
+ background-color: #5C1D92;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5C1D92),
+		to(#2F2727));
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #2F2727, #5C1D92);
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #2F2727, #5C1D92);
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #2F2727, #5C1D92);
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #2F2727, #5C1D92);
+	padding: 15px;
+	/*background-size: 100%; 100%;*/
+	font-family: helvetica;
+	font-weight:200;
+	font-size: small;
+	color: white;
+	line-height: 20px;
+    margin-bottom:10px;
+    z-index: 3;
 }
