@@ -10,3 +10,9 @@ body {
     padding-top: 0;
   }
 }
+
+.normalNewsContent{
+	font-family: helvetica;
+	font-size: small;
+	color: #8a34e1;
+}

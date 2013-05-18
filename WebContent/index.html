@@ -15,6 +15,10 @@
 		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 		<link href="css/header.css" rel="stylesheet" media="screen">
 		<link href="css/footer.css" rel="stylesheet" media="screen">
+		<!-- JQuery UI -->
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 		<script src="../assets/js/html5shiv.js"></script>
@@ -25,6 +29,12 @@
 
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 		<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+		
+		<script>
+			$(function() {
+				$( "#accordion" ).accordion();
+			});
+		</script>
 
 		<script type="text/javascript">
 			/**
@@ -39,7 +49,7 @@
 				content : contentString
 			});
 			var contentString = '<div id="" class="">' + '<b>Contatti</b>' + '<div id="" class="" style="font-size: small;">' + 'Per maggiori informazioni e dettagli: ' + '<br>' + '<table style="padding: 10px;">' + '<tr>' + '<td> Antonio </td>' + '<td style="padding-left: 20px;"> +39 335 7364776 </td>' + '</tr>' + '<tr>' + '<td> Maurizio </td>' + '<td style="padding-left: 20px;"> +39 338 1609189 </td>' + '</tr>' + '<tr>' + '<td> Valentina </td>' + '<td style="padding-left: 20px;"> +39 389 8394628 </td>' + '</tr>' + '<tr>' + '<td> Paolo </td>' + '<td style="padding-left: 20px;"> +39 329 4138442 </td>' + '</tr>' + '</table>' + '<div style="padding-top: 30px;">' + 'Viale Manfredo Fanti n&deg 14 - 50132 - Firenze' + '</div>' + '</div>' + '</div>';
-		
+
 			$(document).ready(function() {
 				var valueParam = window.location.search.substring(1);
 				if (valueParam == 'goToNews')
@@ -67,6 +77,7 @@
 					title : 'Viola Club - Fantechi Ciuffi Bar Marisa'
 				});
 			}
+
 			//Add DomListener
 			google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -80,12 +91,12 @@
 				}, 1500);
 				isOnTop = false;
 			}
-			
+
 			/**
 			 * Funzione di Scroll all'elemento contatti
 			 */
 			function scrollContatti() {
-				calcRoute();
+				//calcRoute();
 				$('html, body').animate({
 					scrollTop : $('#heroUnitFooter').offset().top
 				}, 1500);
@@ -102,7 +113,7 @@
 				}, 1500);
 				isOnTop = false;
 			}
-			
+
 			/**
 			 * Funzione di scroll all elemento news
 			 */
@@ -143,7 +154,7 @@
 				//alert(position.coords.latitude + " -- "+position.coords.longitude);
 				currentPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 			}
-			
+
 			/**
 			 * Funzione di Navigazione
 			 * dalla posizione attuale al violaclub
@@ -199,8 +210,20 @@
 								<li>
 									<a href="#" onclick="scrollContatti();">Contati</a>
 								</li>
-								<li>
-									<a href="slideshow.html" onclick="">Phogallery</a>
+								<li class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" onclick=""> Phogallery <b class="caret"></b>
+									<ul class="dropdown-menu" style="left: 1;" role="menu" aria-labelledby="dropdownMenu">
+										<li>
+											<a tabindex="-1" href="slideshow.html">Firenze</a>
+										</li>
+										<li>
+											<a tabindex="-1" href="slideshow.html">Fiorentina</a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a tabindex="-1" href="slide_otel_2006.html">Cena Otel 2006</a>
+										</li>
+									</ul> </a>
 								</li>
 								<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
 							</ul>
@@ -263,21 +286,125 @@
 		<div id='main' role='main'>
 			<div class='container-fluid' id="containerBootstrap">
 				<div class="row-fluid">
-					<div class="span2">
-						<!--Sidebar content-->
+					<div class="span3">
+						<div class="span10">
+							<img src="img/edicolaelisa.jpg"/>
+						</div>
 					</div>
-					<div class="span10">
+					<div class="span9">
 						<div class="hero-unit" id="heroNews">
 							<div id="pagNews" class="row-fluid">
 								<div class="span12">
-									LE NEWS
+									<div style="font-size: xx-large; font-style: helvetica; font-weight: 900; color: #940e0e;" class="span6">
+										Le Viola NEWS
+									</div>
+									<div class="span3">
+										<img src="img/Icon-news.png" />
+									</div>
+								</div>
+								<div class="span12">
+									<div id="accordion">
+										<h3 style="color: #58248c; font-size: small"><b>Iachini</b>: "Nessuna pressione dall'esterno, pensiamo a fare la nostra gara"</h3>
+										<div style="color: #58248c; font-size: small">
+											<p>												
+"Domani penseremo a fare la nostra partita, onorando con serietà e impegno il campionato, da professionisti quali siamo. I discorsi relativi alle altre squadre non ci riguardano". Così il tecnico bianconero Giuseppe Iachini in sala stampa, alla vigilia della gara contro i rossoneri: "Non abbiamo avvertito pressioni dall'esterno in questi giorni, ci siamo allenati come sempre e come è giusto che sia. Giocheremo da squadra, consapevoli delle differenze di valori con un Milan che ha molta qualità e una grande organizzazione di gioco".
+											</p>
+										</div>
+										<h3 style="color: #fb2222; font-size: small"><b>Montella: "Mi aspetto che il Siena pareggi, ma pensiamo a noi. Rossi..."</b></h3>
+										<div style="color: #58248c; font-size: small">
+											<p>
+												Oggi alle 13.30 presso la sala stampa 'Manuela Righini' dello Stadio Artemio Franchi di Firenze si è svolta la conferenza stampa di mister Montella, alla vigilia della gara contro il Pescara, ultima partita della stagione. Molti i temi trattati per il mister viola, a cominciare dalla lotta al terzo posto contro il Milan di Allegri...
+											</p>
+										</div>
+										<h3 style="color: #58248c"><b>Section 3</b></h3>
+										<div style="color: #58248c; font-size: small">
+											<p>
+												Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+												Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+												ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+												lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+											</p>
+											<ul>
+												<li>
+													List item one
+												</li>
+												<li>
+													List item two
+												</li>
+												<li>
+													List item three
+												</li>
+											</ul>
+										</div>
+										<h3 style="color: #58248c">Section 4</h3>
+										<div style="color: #58248c; font-size: small">
+											<p>
+												Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+												et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+												faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+												mauris vel est.
+											</p>
+											<p>
+												Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+												Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+												inceptos himenaeos.
+											</p>
+										</div>
+									</div>
+
 								</div>
 							</div>
 						</div>
-						<div class="hero-unit" id="heroChiSiamo">
+						<div class="hero-unit" id="heroChiSiamo" style="background-color: white;">
 							<div id="pagChiSiamo" class="row-fluid">
 								<div class="span12">
-									INIZIATIVE
+									<div style="color:#940e0e; font-size: xx-large; font-style: helvetica; font-weight: 900;" class="span6">
+										INIZIATIVE
+									</div>
+									<div class="span4">
+										<img src="img/iniziative.png" />
+									</div>
+								</div>
+								<div class="span12">
+
+									<b>TRASFERTA</b>
+									<br>
+									<div style="font-size: small">
+										Il Viola Club M. Fantechi, organizza pullman, in occasione della partita Bologna - Fiorentina di Domenica 24 Febbraio 2013 ore 15:00!
+										<br>
+										Costo trasferta: Soci gratuita / Non Soci 10€
+										<br>
+										Biglietto: 21,50€
+										<br>
+										Per adesioni e informazioni:
+										<br>
+										ANTONIO: 335/7364776
+										<br>
+
+										MAURIZIO: 338/1609189
+										<br>
+
+										PAOLO: 329/7409537
+									</div>
+								</div>
+								<div class="span12">
+									<br>
+									<b>CENA SOCIALE VIOLA CLUB MARIO FANTECHI & CRAL NUOVO PIGNONE</b>
+									<div style="font-size: small">
+										20 Febbraio 2013
+										<br>
+										c/o OTEL VARIETE' - Firenze
+										<br>
+										Per l'occasione avremo una rappresentanza di dirigenti e giocatori dell'ACF Fiorentina in modo da rendere la serata indimenticabile.
+										<br>
+										Per maggiori informazioni contattare:
+										<br>
+										MAURIZIO: 338/1609189
+										<br>
+										PAOLO: 329/7409537
+										<br>
+										VALENTINA 392/8490658
+									</div>
 								</div>
 							</div>
 						</div>
@@ -369,12 +496,12 @@
 		</div>
 
 		<script>
-			! function($) {
-				$(function() {
-					// carousel demo
-					$('#myCarousel').carousel()
-				})
-			}(window.jQuery)
+! function($) {
+$(function() {
+// carousel demo
+$('#myCarousel').carousel()
+})
+}(window.jQuery)
 		</script>
 		<script src="js/holder.js"></script>
 	</body>

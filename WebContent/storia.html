@@ -71,7 +71,6 @@
 			google.maps.event.addDomListener(window, 'load', initialize);
 			
 			function scrollStoria() {
-				calcRoute();
 				$('html, body').animate({
 					scrollTop : $('#heroStoria').offset().top
 				}, 1500);
@@ -79,7 +78,6 @@
 			}
 
 			function scrollContatti() {
-				calcRoute();
 				$('html, body').animate({
 					scrollTop : $('#heroUnitFooter').offset().top
 				}, 1500);
@@ -168,8 +166,20 @@
 								<li>
 									<a href="#" onclick="scrollContatti();">Contati</a>
 								</li>
-								<li>
-									<a href="slideshow.html" onclick="">Phogallery</a>
+								<li class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" onclick=""> Phogallery <b class="caret"></b>
+									<ul class="dropdown-menu" style="left: 1;" role="menu" aria-labelledby="dropdownMenu">
+										<li>
+											<a tabindex="-1" href="slideshow.html">Firenze</a>
+										</li>
+										<li>
+											<a tabindex="-1" href="slideshow.html">Fiorentina</a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a tabindex="-1" href="slide_otel_2006.html">Cena Otel 2006</a>
+										</li>
+									</ul> </a>
 								</li>
 								<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
 							</ul>
