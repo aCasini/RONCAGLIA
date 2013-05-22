@@ -16,3 +16,27 @@ body {
 	font-size: small;
 	color: #8a34e1;
 }
+
+#heroStoria{
+	background-color: #5C1D92;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5C1D92),
+		to(#2F2727));
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #2F2727, #5C1D92);
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #2F2727, #5C1D92);
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #2F2727, #5C1D92);
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #2F2727, #5C1D92);
+	padding: 15px;
+	/*background-size: 100%; 100%;*/
+	font-family: helvetica;
+	font-weight:200;
+	font-size: small;
+	color: white;
+	line-height: 20px;
+    margin-bottom:10px;
+    z-index: 3;
+}
